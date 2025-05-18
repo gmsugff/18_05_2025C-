@@ -16,7 +16,7 @@ namespace p32_18_05_2025
 
                 SQLiteConnection connection = new SQLiteConnection(connectionString);
                 
-                string query = "CREATE TABLE Vegetables_and_fruits( Name  NVARCHAR(30), Type NVARCHAR(30), Colour NVARCHAR(30), Caloric_content NVARCHAR(30));";
+                string query = "CREATE TABLE Vegetables_and_fruits( Name  NVARCHAR(30), Type NVARCHAR(30), Colour NVARCHAR(30), Caloric_content INT);";
                 SQLiteCommand command = new SQLiteCommand(query, connection);
                 connection.Open();
                 command.ExecuteNonQuery();
