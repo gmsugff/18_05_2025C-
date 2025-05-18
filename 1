@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data.SQLite;
+    
+namespace p32_18_05_2025
+{
+        internal class Program
+        {
+            static void Main(string[] args)
+            {
+                string connectionString = "Data Source=mydb.db;Version=3;";
+
+
+                SQLiteConnection connection = new SQLiteConnection(connectionString);
+                
+                string query = "CREATE TABLE Vegetables_and_fruits( Name  NVARCHAR(30), Type NVARCHAR(30), Colour NVARCHAR(30), Caloric_content NVARCHAR(30));";
+                SQLiteCommand command = new SQLiteCommand(query, connection);
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
+
+            }
+        }
+    
+}
